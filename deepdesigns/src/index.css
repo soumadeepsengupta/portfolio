@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+body {
+  font-family: 'Geist', 'Inter', 'sans-serif';
+}
+
+h1, h2, h3, .font-serif, .editorial {
+  font-family: 'PPEditorialNew', serif;
+}
+
+.geist {
+  font-family: 'Geist', 'Inter', 'sans-serif';
+}
+
+/* Utility classes for easy font usage */
+.font-editorial {
+  font-family: 'PPEditorialNew', serif;
+}
+.font-geist {
+  font-family: 'Geist', 'Inter', 'sans-serif';
+}
