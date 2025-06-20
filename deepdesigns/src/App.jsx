@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DarkModeToggle from "./DarkModeToggle";
+import Navbar from "./Navbar";
 import Logo from "./Logo";
 import ResumeButton from "./ResumeButton";
 import IntroCard from "./IntroCard";
@@ -21,12 +21,9 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={`relative min-h-screen transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-      <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="flex justify-center items-center pt-6 pb-2">
-        <Logo darkMode={darkMode} />
-      </div>
-      <ResumeButton darkMode={darkMode} />
+    <div className={`relative min-h-screen transition-colors duration-200 ${darkMode ? 'bg-black' : 'bg-white'}`}> 
+      {/* Sticky, centered navbar with blur */}
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       {/* Responsive bento grid layout */}
       <main
         className="w-full max-w-none mx-0 px-2 py-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:max-w-3xl xl:max-w-[1440px] md:mx-auto"

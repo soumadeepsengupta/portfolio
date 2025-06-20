@@ -8,7 +8,8 @@ export default function PhotoCard({ darkMode }) {
       <img
         src={imageSrc}
         alt="Profile"
-        className="object-cover w-full h-full"
+        className="object-cover w-full h-full object-center"
+        style={{ objectPosition:darkMode?'center 20%': 'center 70%'}}
         loading="eager"
         key={imageSrc} // Force re-render when image source changes
       />
