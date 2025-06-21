@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function WorkCard() {
+export default function WorkCard({ darkMode }) {
   const works = Array(6).fill("SnapJini");
   return (
-    <div className="bg-red-500 rounded-2xl border-3 p-6 flex flex-col h-full dark:bg-red-500">
+    <div className={`bg-red-500 rounded-2xl border-3 p-6 flex flex-col h-full dark:bg-red-500 ${darkMode ? 'border-white' : 'border-black'}`}>
       <div className="text-5xl font-editorial mb-4">Work</div>
       <div className="flex-1 flex flex-col gap-2">
         {works.map((work, i) => (

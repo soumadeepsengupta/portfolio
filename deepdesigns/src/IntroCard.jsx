@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function IntroCard() {
+export default function IntroCard({ darkMode }) {
   return (
-    <div className="bg-green-500 rounded-2xl border-3 p-6 flex flex-col justify-between h-full">
+    <div className={`bg-green-500 rounded-2xl border-3 p-6 flex flex-col justify-between h-full ${darkMode ? 'border-white' : 'border-black'}`}>
       <div>
         <div className="text-lg mb-2 font-geist">Hi, I am</div>
         <div className="text-5xl font-editorial leading-tight mb-2">Soumadeep Sengupta</div>

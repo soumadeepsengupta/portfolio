@@ -15,9 +15,9 @@ const skills = [
   { name: "JavaScript", logo: "/javascript.svg" },
 ];
 
-export default function SkillsCard() {
+export default function SkillsCard({ darkMode }) {
   return (
-    <div className="bg-fuchsia-400 rounded-2xl border-3 p-6 flex flex-col h-full">
+    <div className={`bg-fuchsia-400 rounded-2xl border-3 p-6 flex flex-col h-full ${darkMode ? 'border-white' : 'border-black'}`}>
       <div className="text-5xl font-editorial mb-4">Skills</div>
       <div className="flex flex-wrap gap-2 font-geist">
         {skills.map((skill) => (
