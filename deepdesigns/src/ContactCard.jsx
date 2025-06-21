@@ -63,13 +63,13 @@ export default function ContactCard({ darkMode }) {
       {showBubble && (
         <div className="absolute right-[40px] bottom-[120px] z-10 min-w-[170px] max-w-[60vw] bg-blue-300/80 rounded-full rounded-br-none px-2 py-2 shadow font-geist text-base flex flex-col items-start animate-fade-in" style={{transform: 'scale(0.75)', transformOrigin: 'top right'}}>
           <div className="flex flex-row items-center gap-3 mb-1 w-full">
-            <img src="/favicon_dd.svg" alt="Soumadeep" className="w-10 h-10 rounded-full border border-black/20" />
+            <img src="/profilepic.svg" alt="Soumadeep" className="w-10 h-10 rounded-full border border-black/20" />
             <div className="flex flex-col justify-center">
-              <span className="font-semibold text-black leading-tight text-base">Soumadeep</span>
+              <span className="font-semibold text-black/80 leading-tight text-base">Soumadeep</span>
               <span className="text-black/80 leading-tight min-h-[1em] text-base">
                 {bubbleText}
                 <span
-                  className="inline-block w-0.5 h-5 align-middle animate-pulse bg-black/80 ml-0.5"
+                  className="inline-block w-0.5 h-5 align-middle animate-pulse bg-black ml-0.5"
                   style={{opacity: bubbleText.length < messages[msgIdx].length ? 1 : 0}}
                 ></span>
               </span>
