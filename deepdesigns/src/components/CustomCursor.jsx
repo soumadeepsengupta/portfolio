@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const CURSOR_SIZE = 64;
+const CURSOR_SIZE = 52;
 
 export default function CustomCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -11,9 +11,26 @@ export default function CustomCursor() {
     // Hide system cursor globally
     document.body.style.cursor = "none";
     document.documentElement.style.cursor = "none";
+
+    // Listen for custom events to hide/show the custom cursor
+    const handleHide = () => {
+      setCursorVisible(false);
+      document.body.style.cursor = "default";
+      document.documentElement.style.cursor = "default";
+    };
+    const handleShow = () => {
+      setCursorVisible(true);
+      document.body.style.cursor = "none";
+      document.documentElement.style.cursor = "none";
+    };
+    window.addEventListener('custom-cursor-hide', handleHide);
+    window.addEventListener('custom-cursor-show', handleShow);
+
     return () => {
       document.body.style.cursor = "";
       document.documentElement.style.cursor = "";
+      window.removeEventListener('custom-cursor-hide', handleHide);
+      window.removeEventListener('custom-cursor-show', handleShow);
     };
   }, []);
 

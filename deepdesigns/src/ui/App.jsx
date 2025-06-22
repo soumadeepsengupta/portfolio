@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import Logo from "./Logo";
-import ResumeButton from "./ResumeButton";
+import Logo from "../components/Logo";
+import ResumeButton from "../components/ResumeButton";
 import IntroCard from "./IntroCard";
 import PhotoCard from "./PhotoCard";
 import WorkCard from "./WorkCard";
 import SkillsCard from "./SkillsCard";
 import ContactCard from "./ContactCard";
 import SocialLinksFooter from "./SocialLinksFooter";
-import CustomCursor from "./CustomCursor";
-import CustomPointer from "./CustomPointer";
+import CustomCursor from "../components/CustomCursor";
+import CustomPointer from "../components/CustomPointer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
