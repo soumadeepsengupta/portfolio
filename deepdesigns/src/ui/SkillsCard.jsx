@@ -51,6 +51,14 @@ const skills = [
   { name: "React JS", logo: "/react.svg" },
   { name: "Spotify", logo: "/spotify.svg" },
   { name: "JavaScript", logo: "/javascript.svg" },
+  { name: "Vite.js", logo: "/javascript.svg" },
+  { name: "Git", logo: "/javascript.svg" },
+  { name: "Github", logo: "/javascript.svg" },
+  { name: "Node.js", logo: "/javascript.svg" },
+  { name: "Matter.js", logo: "/javascript.svg" },
+  { name: "Matter.js", logo: "/javascript.svg" },
+  { name: "Motion.dev", logo: "/javascript.svg" },
+  { name: "GSAP", logo: "/javascript.svg" },
 ];
 
 export default function SkillsCard({ darkMode }) {
@@ -105,7 +113,7 @@ export default function SkillsCard({ darkMode }) {
         el.style.top = `${y - pillHeight / 2}px`;
         const body = Bodies.rectangle(x, y, pillWidth, pillHeight, {
           restitution: 0.9,
-          friction: 0.1,
+          friction: 0.9,
           render: { opacity: 0 },
         });
         Composite.add(engine.world, body);

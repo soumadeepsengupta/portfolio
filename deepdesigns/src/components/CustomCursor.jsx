@@ -5,6 +5,7 @@ const CURSOR_SIZE = 52;
 export default function CustomCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
+  const [forcePointer, setForcePointer] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
 
   useEffect(() => {
@@ -23,14 +24,21 @@ export default function CustomCursor() {
       document.body.style.cursor = "none";
       document.documentElement.style.cursor = "none";
     };
+    // Listen for pointer override events
+    const handlePointer = () => setForcePointer(true);
+    const handleDefault = () => setForcePointer(false);
     window.addEventListener('custom-cursor-hide', handleHide);
     window.addEventListener('custom-cursor-show', handleShow);
+    window.addEventListener('custom-cursor-pointer', handlePointer);
+    window.addEventListener('custom-cursor-default', handleDefault);
 
     return () => {
       document.body.style.cursor = "";
       document.documentElement.style.cursor = "";
       window.removeEventListener('custom-cursor-hide', handleHide);
       window.removeEventListener('custom-cursor-show', handleShow);
+      window.removeEventListener('custom-cursor-pointer', handlePointer);
+      window.removeEventListener('custom-cursor-default', handleDefault);
     };
   }, []);
 
@@ -79,7 +87,7 @@ export default function CustomCursor() {
 
   return (
     <img
-      src={isPointer ? "/pointer.svg" : "/cursor.svg"}
+      src={forcePointer || isPointer ? "/pointer.svg" : "/cursor.svg"}
       alt="Custom Cursor"
       width={CURSOR_SIZE}
       height={CURSOR_SIZE}
