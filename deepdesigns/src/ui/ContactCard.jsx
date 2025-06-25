@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const messages = [
   "Up for UI talks... extra masala please.",
@@ -10,8 +11,16 @@ export default function ContactCard({ darkMode }) {
   const [showBubble, setShowBubble] = useState(false);
   const [bubbleText, setBubbleText] = useState("");
   const [msgIdx, setMsgIdx] = useState(0);
+  const [showMail, setShowMail] = useState(false);
   const typingTimeout = useRef();
   const bubbleTimeout = useRef();
+  const cardRef = useRef(null);
+
+  // Framer Motion values for mail position
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 100, damping: 50 });
+  const springY = useSpring(mouseY, { stiffness: 100, damping: 50 });
 
   // Typewriter effect for cycling messages in order
   const typeMessage = (idx = 0) => {
@@ -35,10 +44,17 @@ export default function ContactCard({ darkMode }) {
     typeChar();
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (e) => {
     setShowBubble(true);
     setMsgIdx(0);
     typeMessage(0);
+    setShowMail(true);
+    // Set initial mail position
+    if (cardRef.current && e) {
+      const rect = cardRef.current.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left);
+      mouseY.set(e.clientY - rect.top);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -46,15 +62,34 @@ export default function ContactCard({ darkMode }) {
     setBubbleText("");
     clearTimeout(typingTimeout.current);
     clearTimeout(bubbleTimeout.current);
+    setShowMail(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
+
+  const handleClick = () => {
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=senguptasomuchdeep@gmail.com",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
     <div
+      ref={cardRef}
       className={`bg-[#0091FF] rounded-2xl border-3 p-0 flex flex-col h-[32rem] relative overflow-hidden shadow-lg ${
         darkMode ? "border-white" : "border-black"
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onMouseMove={showMail ? handleMouseMove : undefined}
+      onClick={showMail ? handleClick : undefined}
     >
       <div className="absolute top-6 left-6 text-base font-geist tracking-wide text-black">
         U & I Let’s Talk UI
@@ -77,24 +112,45 @@ export default function ContactCard({ darkMode }) {
           </div>
         </div>
       )}
+      {/* Floating mail text that follows cursor */}
+      {showMail && (
+        <motion.div
+          className="pointer-events-none z-50 fixed md:absolute text-sm font-geist text-black/90 rounded px-4 py-2 "
+          style={{
+            left: 0,
+            top: 0,
+            x: springX,
+            y: springY,
+            translateX: '-50%',
+            translateY: '-50%',
+            userSelect: 'none',
+            background: 'none', // Remove white background
+          }}
+        >
+          senguptasomuchdeep@gmail.com
+        </motion.div>
+      )}
+      {/* Hide original mail link when floating mail is active */}
       <div className="flex flex-col items-end justify-end h-full w-full p-0">
         <div className="flex flex-col items-end justify-end px-8 pb-8">
-          <div className="text-6xl font-editorial mb-2 text-black leading-none text-right relative">
+          <div className="text-6xl font-editorial mt-4 text-black leading-none text-right relative">
             Contact me
           </div>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=senguptasomuchdeep@gmail.com"
-            className="text-lg font-geist text-black/75 hover:text-black text-right relative group"
-            style={{ textDecoration: "none" }}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Always render a placeholder for the mail text to reserve space, but make it invisible when floating mail is active */}
+          <span
+            className="text-sm font-geist text-black/75 text-right relative group"
+            style={{
+              visibility: showMail ? 'hidden' : 'visible',
+              height: '2.5rem', // match the height of the mail text for consistent spacing
+              display: 'inline-block',
+            }}
           >
             senguptasomuchdeep@gmail.com
             <span
               className="absolute left-0 -bottom-0.5 w-full h-[1.5px] bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
               aria-hidden="true"
             />
-          </a>
+          </span>
         </div>
       </div>
     </div>
