@@ -81,12 +81,14 @@ export default function SkillsCard({ darkMode }) {
       const width = container.clientWidth;
       const height = container.clientHeight;
 
+      // Reduce the canvas height slightly for the floor
+      const canvasOffset = 48; // px above the bottom
       const render = Render.create({
         element: container,
         engine,
         options: {
           width,
-          height,
+          height: height - canvasOffset, // slightly less than card height
           background: "transparent",
           wireframes: false,
         },
@@ -124,14 +126,14 @@ export default function SkillsCard({ darkMode }) {
       const wallThickness = 40; // Increased thickness for better containment
       const transparentWall = { isStatic: true, render: { visible: false } };
       const walls = [
-        // Floor
-        Bodies.rectangle(width / 2, height + wallThickness / 2 , width , wallThickness, transparentWall),
+        // Floor: a few pixels above the bottom edge
+        Bodies.rectangle(width / 2, height - canvasOffset - wallThickness / 2, width, wallThickness, transparentWall),
         // Ceiling
-        Bodies.rectangle(width / 2, -wallThickness / 2 , width , wallThickness, transparentWall),
+        Bodies.rectangle(width / 2, -wallThickness / 2, width, wallThickness, transparentWall),
         // Left wall
-        Bodies.rectangle(-wallThickness / 2 , height / 2, wallThickness, height , transparentWall),
+        Bodies.rectangle(-wallThickness / 2, (height - canvasOffset) / 2, wallThickness, height - canvasOffset, transparentWall),
         // Right wall
-        Bodies.rectangle(width + wallThickness / 2 - 2, height / 2, wallThickness, height , transparentWall),
+        Bodies.rectangle(width + wallThickness / 2, (height - canvasOffset) / 2, wallThickness, height - canvasOffset, transparentWall),
       ];
       Composite.add(engine.world, walls);
 
@@ -184,7 +186,7 @@ export default function SkillsCard({ darkMode }) {
     <div
       className={`bg-fuchsia-400 rounded-2xl border-3 p-6 h-[32rem] relative overflow-hidden ${darkMode ? 'border-white' : 'border-black'}`}
       ref={containerRef}
-      style={{ paddingLeft:'28px', minHeight: 200, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column',cursor:"-webkit-grab", justifyContent: 'flex-start' }}
+      style={{ minHeight: 200, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column', cursor: "-webkit-grab", justifyContent: 'flex-start' }}
       onMouseEnter={() => {
         window.dispatchEvent(new CustomEvent('custom-cursor-hide'));
       }}
