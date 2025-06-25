@@ -50,7 +50,7 @@ export default function ContactCard({ darkMode }) {
 
   return (
     <div
-      className={`bg-[#0091FF] rounded-2xl border-3 p-0 flex flex-col h-full relative overflow-hidden shadow-lg ${
+      className={`bg-[#0091FF] rounded-2xl border-3 p-0 flex flex-col h-[32rem] relative overflow-hidden shadow-lg ${
         darkMode ? "border-white" : "border-black"
       }`}
       onMouseEnter={handleMouseEnter}

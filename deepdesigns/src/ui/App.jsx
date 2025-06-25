@@ -43,14 +43,14 @@ function App() {
           <div className="min-h-[340px] xl:min-h-[420px] h-full xl:col-span-3 xl:row-span-1">
             <PhotoCard darkMode={darkMode} />
           </div>
-          <div className="min-h-[340px] xl:min-h-[660px] h-full md:col-span-2 xl:col-span-4 xl:row-span-2">
+          <div className="min-h-[340px] xl:min-h-[660px] h-[61.6rem] md:col-span-2 xl:col-span-4 xl:row-span-2">
             <WorkCard darkMode={darkMode} />
           </div>
           {/* Row 2: SkillsCard | ContactCard */}
-          <div className="min-h-[200px] xl:min-h-[220px] h-full xl:col-span-4 xl:row-span-1">
+          <div className="min-h-[200px] xl:min-h-[220px] h-[32rem] xl:col-span-4 xl:row-span-1">
             <SkillsCard darkMode={darkMode} />
           </div>
-          <div className="min-h-[200px] xl:min-h-[220px] h-full xl:col-span-4 xl:row-span-1">
+          <div className="min-h-[200px] xl:min-h-[220px] h-[32rem] xl:col-span-4 xl:row-span-1">
             <ContactCard darkMode={darkMode} />
           </div>
         </main>

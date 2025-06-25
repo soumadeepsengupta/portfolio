@@ -125,13 +125,13 @@ export default function SkillsCard({ darkMode }) {
       const transparentWall = { isStatic: true, render: { visible: false } };
       const walls = [
         // Floor
-        Bodies.rectangle(width / 2, height + wallThickness / 2 - 2, width + 80, wallThickness, transparentWall),
+        Bodies.rectangle(width / 2, height + wallThickness / 2 , width , wallThickness, transparentWall),
         // Ceiling
-        Bodies.rectangle(width / 2, -wallThickness / 2 + 2, width + 80, wallThickness, transparentWall),
+        Bodies.rectangle(width / 2, -wallThickness / 2 , width , wallThickness, transparentWall),
         // Left wall
-        Bodies.rectangle(-wallThickness / 2 + 2, height / 2, wallThickness, height + 80, transparentWall),
+        Bodies.rectangle(-wallThickness / 2 , height / 2, wallThickness, height , transparentWall),
         // Right wall
-        Bodies.rectangle(width + wallThickness / 2 - 2, height / 2, wallThickness, height + 80, transparentWall),
+        Bodies.rectangle(width + wallThickness / 2 - 2, height / 2, wallThickness, height , transparentWall),
       ];
       Composite.add(engine.world, walls);
 
@@ -182,9 +182,9 @@ export default function SkillsCard({ darkMode }) {
 
   return (
     <div
-      className={`bg-fuchsia-400 rounded-2xl border-3 p-6 h-full relative overflow-hidden ${darkMode ? 'border-white' : 'border-black'}`}
+      className={`bg-fuchsia-400 rounded-2xl border-3 p-6 h-[32rem] relative overflow-hidden ${darkMode ? 'border-white' : 'border-black'}`}
       ref={containerRef}
-      style={{ minHeight: 300, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column',cursor:"-webkit-grab", justifyContent: 'flex-start' }}
+      style={{ paddingLeft:'28px', minHeight: 200, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column',cursor:"-webkit-grab", justifyContent: 'flex-start' }}
       onMouseEnter={() => {
         window.dispatchEvent(new CustomEvent('custom-cursor-hide'));
       }}
@@ -192,7 +192,7 @@ export default function SkillsCard({ darkMode }) {
         window.dispatchEvent(new CustomEvent('custom-cursor-show'));
       }}
     >
-      <div className="text-5xl font-editorial z-10 relative">Skills</div>
+      <div className="text-6xl font-editorial z-10 relative">Skills</div>
       <div
         className="relative z-10 font-geist w-full h-full"
         style={{ width: '100%', height: '100%', position: 'relative', paddingBottom: 0 }}
