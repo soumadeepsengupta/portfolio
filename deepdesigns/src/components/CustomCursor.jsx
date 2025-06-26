@@ -7,6 +7,7 @@ export default function CustomCursor() {
   const [isPointer, setIsPointer] = useState(false);
   const [forcePointer, setForcePointer] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
+  const [isPhotoCard, setIsPhotoCard] = useState(false);
 
   useEffect(() => {
     // Hide system cursor globally
@@ -77,13 +78,64 @@ export default function CustomCursor() {
       el.addEventListener('mouseenter', handleEnter);
       el.addEventListener('mouseleave', handleLeave);
     });
+    // Listen for PhotoCard hover
+    const photoEls = document.querySelectorAll('.photo-card-cursor');
+    const handlePhotoEnter = () => setIsPhotoCard(true);
+    const handlePhotoLeave = () => setIsPhotoCard(false);
+    photoEls.forEach(el => {
+      el.addEventListener('mouseenter', handlePhotoEnter);
+      el.addEventListener('mouseleave', handlePhotoLeave);
+    });
     return () => {
       pointerEls.forEach(el => {
         el.removeEventListener('mouseenter', handleEnter);
         el.removeEventListener('mouseleave', handleLeave);
       });
+      photoEls.forEach(el => {
+        el.removeEventListener('mouseenter', handlePhotoEnter);
+        el.removeEventListener('mouseleave', handlePhotoLeave);
+      });
     };
   }, []);
+
+  if (isPhotoCard) {
+    return (
+      <div style={{
+        position: 'fixed',
+        left: pos.x,
+        top: pos.y,
+        zIndex: 10000,
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'flex-start',
+        // No transform here, we'll use absolute for the bubble
+      }}>
+        <img src="/figmacursor.svg" alt="Figma Cursor" width={32} height={32} style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.15))', display: 'block' }} />
+        <div style={{
+          position: 'absolute',
+          left: 28,
+          top: 22,
+          background: '#dd2590f2',
+          color: '#fff',
+          borderRadius: '0 32px 32px 32px',
+          padding: '8px 20px',
+          fontWeight: 500,
+          fontFamily: 'inherit',
+          fontWeight: 'normal',
+          fontSize: 16,
+          border: '3px solid #c11574',
+          boxShadow: '0 1px 6px 0 #dd259066',
+          whiteSpace: 'nowrap',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '2.5rem',
+        }}>
+          Soumadeep
+        </div>
+      </div>
+    );
+  }
 
   return (
     <img

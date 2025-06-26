@@ -4,7 +4,7 @@ export default function PhotoCard({ darkMode }) {
   const imageSrc = darkMode ? "/profile_night.jpeg" : "/profile_day.jpeg";
 
   return (
-    <div className={`grayscale rounded-2xl border-3 flex items-center justify-center overflow-hidden h-full ${darkMode ? 'border-white' : 'border-black'}`}>
+    <div className={`photo-card-cursor grayscale rounded-2xl border-3 flex items-center justify-center overflow-hidden h-full cursor-none ${darkMode ? 'border-white' : 'border-black'}`}>
       <img
         src={imageSrc}
         alt="Profile"
