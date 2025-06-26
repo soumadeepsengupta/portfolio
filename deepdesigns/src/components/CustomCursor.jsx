@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const CURSOR_SIZE = 52;
+const CURSOR_SIZE = 48;
 
 export default function CustomCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
