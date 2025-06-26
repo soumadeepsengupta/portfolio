@@ -124,7 +124,7 @@ export default function CustomCursor() {
           fontWeight: 'normal',
           fontSize: 16,
           border: '3px solid #c11574',
-          boxShadow: '0 1px 6px 0 #dd2590de',
+          boxShadow: '0 1px 6px 0 #dd259066',
           whiteSpace: 'nowrap',
           display: 'flex',
           alignItems: 'center',

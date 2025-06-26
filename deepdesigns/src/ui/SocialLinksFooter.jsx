@@ -11,12 +11,14 @@ const links = [
   { name: "LINKEDIN", url: "https://www.linkedin.com/in/soumadeep-sengupta-0b6017235/" },
 ];
 
-export default function SocialLinksFooter({ darkMode }) {
+export default function SocialLinksFooter({ darkMode, setShowCustomPointer }) {
   return (
     <div
       className={`bg-yellow-200 rounded-2xl border-3 p-4 flex flex-col items-center justify-center text-lg font-light dark:bg-yellow-300 font-geist ${
         darkMode ? "border-white" : "border-black"
       }`}
+      onMouseEnter={() => setShowCustomPointer && setShowCustomPointer(true)}
+      onMouseLeave={() => setShowCustomPointer && setShowCustomPointer(false)}
     >
       <div className="w-full flex flex-wrap justify-center md:justify-between items-center gap-4">
         {links.map((link) => (
@@ -26,8 +28,6 @@ export default function SocialLinksFooter({ darkMode }) {
             className="social-link use-pointer transition cursor-none hover:opacity-80 pt-4 p-3 pb-0"
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => window.dispatchEvent(new Event('custom-cursor-pointer'))}
-            onMouseLeave={() => window.dispatchEvent(new Event('custom-cursor-default'))}
           >
             <FlipText text={link.name} />
           </a>

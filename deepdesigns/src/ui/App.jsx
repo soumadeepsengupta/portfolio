@@ -56,7 +56,7 @@ function App() {
         </main>
         {/* Footer always at the bottom, full width */}
         <footer className="w-full max-w-none mx-0 px-2 pb-6 md:max-w-3xl xl:max-w-[1440px] md:mx-auto">
-          <SocialLinksFooter darkMode={darkMode} />
+          <SocialLinksFooter darkMode={darkMode} setShowCustomPointer={setShowCustomPointer} />
         </footer>
       </div>
     </>
