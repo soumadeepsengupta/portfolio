@@ -186,7 +186,7 @@ export default function SkillsCard({ darkMode }) {
     <div
       className={`bg-fuchsia-400 rounded-2xl border-3 p-6 h-[32rem] relative overflow-hidden ${darkMode ? 'border-white' : 'border-black'}`}
       ref={containerRef}
-      style={{ minHeight: 200, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column', cursor: "-webkit-grab", justifyContent: 'flex-start' }}
+      style={{ minHeight: 300, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column', cursor: "-webkit-grab", justifyContent: 'flex-start' }}
       onMouseEnter={() => {
         window.dispatchEvent(new CustomEvent('custom-cursor-hide'));
       }}

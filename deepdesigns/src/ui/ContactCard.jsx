@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const messages = [
@@ -23,6 +23,13 @@ export default function ContactCard({ darkMode }) {
   const springY = useSpring(mouseY, { stiffness: 100, damping: 50 });
 
   // Typewriter effect for cycling messages in order
+  useEffect(() => {
+    setShowBubble(true);
+    setMsgIdx(0);
+    typeMessage(0);
+    // eslint-disable-next-line
+  }, []);
+
   const typeMessage = (idx = 0) => {
     const msg = messages[idx];
     let char = 0;
@@ -45,9 +52,7 @@ export default function ContactCard({ darkMode }) {
   };
 
   const handleMouseEnter = (e) => {
-    setShowBubble(true);
-    setMsgIdx(0);
-    typeMessage(0);
+    // Only showMail logic, do not touch showBubble
     setShowMail(true);
     // Set initial mail position
     if (cardRef.current && e) {
@@ -58,8 +63,7 @@ export default function ContactCard({ darkMode }) {
   };
 
   const handleMouseLeave = () => {
-    setShowBubble(false);
-    setBubbleText("");
+    // Only showMail logic, do not touch showBubble or bubbleText
     clearTimeout(typingTimeout.current);
     clearTimeout(bubbleTimeout.current);
     setShowMail(false);
