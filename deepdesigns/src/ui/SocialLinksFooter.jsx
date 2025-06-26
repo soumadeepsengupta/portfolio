@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import CustomPointer from "../components/CustomPointer";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
@@ -20,7 +19,6 @@ export default function SocialLinksFooter({ darkMode }) {
       }`}
     >
       <div className="w-full flex flex-wrap justify-center md:justify-between items-center gap-4">
-        <CustomPointer/>
         {links.map((link) => (
           <a
             key={link.name}
@@ -28,6 +26,8 @@ export default function SocialLinksFooter({ darkMode }) {
             className="social-link use-pointer transition cursor-none hover:opacity-80 pt-4 p-3 pb-0"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={() => window.dispatchEvent(new Event('custom-cursor-pointer'))}
+            onMouseLeave={() => window.dispatchEvent(new Event('custom-cursor-default'))}
           >
             <FlipText text={link.name} />
           </a>
