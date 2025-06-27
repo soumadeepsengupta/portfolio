@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import CustomPointer from "../components/CustomPointer";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
@@ -11,23 +12,30 @@ const links = [
   { name: "LINKEDIN", url: "https://www.linkedin.com/in/soumadeep-sengupta-0b6017235/" },
 ];
 
-export default function SocialLinksFooter({ darkMode, setShowCustomPointer }) {
+export default function SocialLinksFooter({ darkMode}) {
+  const [showPointer, setShowPointer] = React.useState(false);
+
   return (
     <div
       className={`bg-yellow-200 rounded-2xl border-3 p-4 flex flex-col items-center justify-center text-lg font-light dark:bg-yellow-300 font-geist ${
         darkMode ? "border-white" : "border-black"
       }`}
-      onMouseEnter={() => setShowCustomPointer && setShowCustomPointer(true)}
-      onMouseLeave={() => setShowCustomPointer && setShowCustomPointer(false)}
     >
-      <div className="w-full flex flex-wrap justify-center md:justify-between items-center gap-4">
+      <div
+        className="w-full flex flex-wrap justify-center md:justify-between items-center gap-4"
+        onMouseEnter={() => setShowPointer(true)}
+        onMouseLeave={() => setShowPointer(false)}
+      >
+        {showPointer && <CustomPointer show={true} />}
         {links.map((link) => (
           <a
             key={link.name}
             href={link.url}
-            className="social-link use-pointer transition cursor-none hover:opacity-80 pt-4 p-3 pb-0"
+            className="social-link use-pointer transition cursor-none hover:opacity-90 pt-4 p-3 pb-0"
             target="_blank"
             rel="noopener noreferrer"
+            // Remove pointer events from link to prevent double pointer
+            style={{ pointerEvents: showPointer ? 'auto' : 'none' }}
           >
             <FlipText text={link.name} />
           </a>

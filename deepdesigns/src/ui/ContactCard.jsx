@@ -95,8 +95,9 @@ export default function ContactCard({ darkMode }) {
       onMouseMove={showMail ? handleMouseMove : undefined}
       onClick={showMail ? handleClick : undefined}
     >
-      <div className="absolute top-6 left-6 text-base font-geist tracking-wide text-black">
-        U & I Let’s Talk UI
+      <div className="text-xl absolute top-6 left-6 font-semibold tracking-light text-black">
+        <p className="text-xs font-extralight opacity-75 mb-4 tracking-tight"> Click anywhere to open mail!</p> 
+       U & I Let’s Talk UI
       </div>
       {/* Message bubble with typewriter effect, smaller and positioned just above Contact me */}
       {showBubble && (

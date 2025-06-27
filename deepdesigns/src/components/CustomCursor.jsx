@@ -120,7 +120,7 @@ export default function CustomCursor() {
           borderRadius: '0 32px 32px 32px',
           padding: '8px 20px',
           fontWeight: 500,
-          fontFamily: 'inherit',
+          fontFamily: 'geist',
           fontWeight: 'normal',
           fontSize: 16,
           border: '3px solid #c11574',
