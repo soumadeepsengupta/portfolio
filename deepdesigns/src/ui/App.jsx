@@ -10,6 +10,7 @@ import ContactCard from "./ContactCard";
 import SocialLinksFooter from "./SocialLinksFooter";
 import CustomCursor from "../components/CustomCursor";
 import CustomPointer from "../components/CustomPointer";
+import Loader from "./Loader"; 
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <>
+    <Loader/>
       {/* Only show one cursor at a time */}
       <CustomCursor style={{ visibility: showCustomPointer ? 'hidden' : 'visible' }} />
       {showCustomPointer && <CustomPointer />}
