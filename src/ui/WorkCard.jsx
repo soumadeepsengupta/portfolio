@@ -92,7 +92,7 @@ export default function WorkCard({ darkMode }) {
 
   return (
     <div
-      className={`bg-red-500 rounded-2xl border-3 p-4 pb-0 flex flex-col h-[61.6rem] dark:bg-red-500 ${
+      className={`bg-[#FF4B37] rounded-2xl border-3 p-4 pb-0 flex flex-col h-[61.6rem] dark:bg-[#FF4B37] ${
         darkMode ? "border-white" : "border-black"
       }`}
       onMouseEnter={() => window.dispatchEvent(new CustomEvent("custom-cursor-pointer"))}

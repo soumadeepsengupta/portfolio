@@ -184,7 +184,7 @@ export default function SkillsCard({ darkMode }) {
 
   return (
     <div
-      className={`bg-fuchsia-400 rounded-2xl border-3 p-6 h-[32rem] relative overflow-hidden ${darkMode ? 'border-white' : 'border-black'}`}
+      className={`bg-[#FF74F9] rounded-2xl border-3 p-6 h-[32rem] relative overflow-hidden ${darkMode ? 'border-white' : 'border-black'}`}
       ref={containerRef}
       style={{ minHeight: 300, height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column', cursor: "-webkit-grab", justifyContent: 'flex-start' }}
       onMouseEnter={() => {

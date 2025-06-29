@@ -47,8 +47,8 @@ export default function IntroCard({ darkMode }) {
     <motion.div
       ref={containerRef}
       className={twMerge(
-        "relative w-full h-full p-8 rounded-2xl border-3 overflow-hidden ",
-        darkMode ? "border-white bg-green-500" : "border-black bg-green-500"
+        "bg-[#46BD73] relative w-full h-full p-8 rounded-2xl border-3 overflow-hidden ",
+        darkMode ? "border-white" : "border-black"
       )}
       animate={{
         backgroundColor: "#22c55e", // green-500

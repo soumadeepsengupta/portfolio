@@ -87,7 +87,7 @@ export default function ContactCard({ darkMode }) {
   return (
     <div
       ref={cardRef}
-      className={`bg-[#0091FF] rounded-2xl border-3 p-0 flex flex-col h-[32rem] relative overflow-hidden shadow-lg ${
+      className={`bg-[#0075FF] rounded-2xl border-3 p-0 flex flex-col h-[32rem] relative overflow-hidden shadow-lg ${
         darkMode ? "border-white" : "border-black"
       }`}
       onMouseEnter={handleMouseEnter}
@@ -96,12 +96,12 @@ export default function ContactCard({ darkMode }) {
       onClick={showMail ? handleClick : undefined}
     >
       <div className="text-xl absolute top-6 left-6 font-semibold tracking-light text-black">
-        <p className="text-xs font-extralight opacity-75 mb-4 tracking-tight"> Click anywhere to open mail!</p> 
+        <p className="text-xs font-extralight opacity-75 mb-4 "> Click anywhere to open mail!</p> 
        U & I Let’s Talk UI
       </div>
       {/* Message bubble with typewriter effect, smaller and positioned just above Contact me */}
       {showBubble && (
-        <div className="absolute right-[40px] bottom-[120px] z-10 min-w-[170px] max-w-[60vw] bg-blue-300/80 rounded-full rounded-br-none px-2 py-2 shadow font-geist text-base flex flex-col items-start animate-fade-in" style={{transform: 'scale(0.75)', transformOrigin: 'top right'}}>
+        <div className="absolute right-[40px] bottom-[120px] z-10 min-w-[170px] max-w-[60vw] bg-blue-300/90 rounded-full rounded-br-none px-2 py-2 shadow font-geist text-base flex flex-col items-start animate-fade-in" style={{transform: 'scale(0.75)', transformOrigin: 'top right'}}>
           <div className="flex flex-row items-center gap-3 mb-1 w-full">
             <img src="/profilepic.svg" alt="Soumadeep" className="w-10 h-10 rounded-full border border-black/20" />
             <div className="flex flex-col justify-center">
