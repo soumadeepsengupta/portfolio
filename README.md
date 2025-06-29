@@ -1,12 +1,40 @@
-# React + Vite
+# DeepDesigns Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the portfolio of Soumadeep Sengupta — a creative developer blending art, tech, and storytelling through design.
 
-Currently, two official plugins are available:
+## 🔥 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, animated personal portfolio built using **React**, **Vite**, **Tailwind CSS v4**, **Framer Motion**, and **Matter.js**. Smooth loader transitions, physics-based interactions, and dark mode support make the experience dynamic and delightful.
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Animated intro loader using Framer Motion
+* Responsive layout built with Tailwind CSS v4
+* Matter.js powered physics interactions for skill cards
+* Dark/Light mode toggle
+* Custom photocard component with grayscale + hover effects
+
+## 🧠 Stack
+
+* **Frontend**: React, Vite
+* **Styling**: Tailwind CSS v4 (no PostCSS config required)
+* **Animation**: Framer Motion
+* **Physics**: Matter.js
+* **Deployment**: Vercel
+
+
+
+## ⚠️ Licensing & Source
+
+This repository is public for learning and showcase only. **Please do not copy the code directly**. Inspiration is welcomed, duplication is not.
+
+---
+
+Crafted at 3AM with Figma, Spotify & a Milkybar 🍫
+
+
+Hosted on: [deepdesignsdotdev.vercel.app](https://deepdesignsdotdev.vercel.app)
+
+---
+
+© 2025 Soumadeep Sengupta
