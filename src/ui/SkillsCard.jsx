@@ -51,14 +51,11 @@ const skills = [
   { name: "React JS", logo: "/react.svg" },
   { name: "Spotify", logo: "/spotify.svg" },
   { name: "JavaScript", logo: "/javascript.svg" },
-  { name: "Vite.js", logo: "/javascript.svg" },
-  { name: "Git", logo: "/javascript.svg" },
-  { name: "Github", logo: "/javascript.svg" },
-  { name: "Node.js", logo: "/javascript.svg" },
-  { name: "Matter.js", logo: "/javascript.svg" },
-  { name: "Matter.js", logo: "/javascript.svg" },
-  { name: "Motion.dev", logo: "/javascript.svg" },
-  { name: "GSAP", logo: "/javascript.svg" },
+  { name: "Vite.js", logo: "/vite.svg" },
+  { name: "Git", logo: "/git.svg" },
+  { name: "Github", logo: "/github.svg" },
+  { name: "Matter.js", logo: "/matter.png" },
+  { name: "Framer Motion", logo: "/motion.svg" },
 ];
 
 export default function SkillsCard({ darkMode }) {
@@ -202,7 +199,7 @@ export default function SkillsCard({ darkMode }) {
         {skills.map((skill) => (
           <span
             key={skill.name}
-            className="pill flex items-center gap-1 px-5 py-2 rounded-full text-base font-medium bg-white/25 border border-transparent hover:bg-transparent hover:border-[#282828] shadow-md"
+            className="pill flex items-center gap-1 px-5 py-2 rounded-full text-base font-medium bg-white/30 border border-transparent hover:bg-transparent hover:border-[#282828] shadow-md"
             style={{ minWidth: 110, minHeight: 38, marginBottom: 7, position: 'relative', fontSize: '0.95rem' }}
           >
             <img src={skill.logo} alt={skill.name} className="h-5 w-5 mr-1" />
