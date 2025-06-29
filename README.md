@@ -1,61 +1,12 @@
-#  Portfolio of Soumadeep Sengupta
+# React + Vite
 
-> ⚠️ This project is open-source for learning purposes. Please do not copy or clone this portfolio without permission or attribution.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A whimsical, high-performance portfolio built using **React**, **Vite**, **Tailwind CSS v4**, **Framer Motion**, and **Matter.js**. Designed to be interactive, physics-driven, and expressive of my style as a designer and developer.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Expanding the ESLint configuration
 
-Live at: [https://deepdesigns.dev](https://deepdesigns.dev)
-
----
-
-## 🛠 Tech Stack
-
-| Technology     | Purpose                                  |
-|----------------|-------------------------------------------|
-| React + Vite   | Fast SPA build with modern tooling        |
-| Tailwind CSS v4| Utility-first styling (CSS-in-JS optional)|
-| Framer Motion  | Smooth animations and transitions         |
-| Matter.js      | Physics for draggable UI (skills pills)   |
-| Custom Cursor  | Fully controlled pointer behavior         |
-| SVG Masking    | Text reveal effects via `mask-image`      |
-
-
----
-
-
-## 🔮 Features
-
-- ✨ Animated loader transitions (logo zoom + page reveal)
-- 🌗 Dark/light theme toggle with smooth transitions
-- 🧲 Physics-based skill chips using Matter.js
-- 🖱️ Custom pointer that appears contextually
-- 🔍 SVG mask hover reveal on IntroCard
-- 📱 Fully responsive design
-
----
-
-## 🌍 Deployment
-
-This portfolio is deployed using **[Vercel](https://vercel.com/)**.
-
----
-
-## 📄 License
-
-This project is **not licensed for reuse** as a template. Please don’t copy this portfolio for personal or commercial projects.
-
----
-
-## 🙋‍♂️ Author
-
-**Soumadeep Sengupta**  
-🌐 [deepdesigns.dev](https://deepdesigns.dev)  
-📧 senguptasomuchdeep@gmail.com  
-🐙 [GitHub](https://github.com/soumadeepsengupta) | 🎨 [Behance](https://www.behance.net/soumadesengupt) | 💼 [LinkedIn](https://www.linkedin.com/in/soumadeep-sengupta-0b6017235/)
-
----
-
-> Design is not just what it looks like and feels like — it’s how it works, scrolls, animates, and maybe even falls (with physics). 🧩
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
