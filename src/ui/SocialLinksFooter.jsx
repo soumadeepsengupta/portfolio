@@ -17,6 +17,7 @@ export default function SocialLinksFooter({ darkMode}) {
   const [hoveredLink, setHoveredLink] = React.useState(null);
 
   return (
+    <div className="items-center justify-center text-center">
     <div
       className={`bg-[#F0FF42] rounded-2xl border-3 p-4 flex flex-col items-center justify-center text-lg font-light dark:bg-yellow-300 font-geist ${
         darkMode ? "border-white" : "border-black"
@@ -44,6 +45,10 @@ export default function SocialLinksFooter({ darkMode}) {
         ))}
       </div>
     </div>
+             <p className="mt-2 text-sm leading-tight ">
+        Made with 💗 by <span className="font-semibold">Soumadeep Sengupta</span> — ©{" "}
+        {new Date().getFullYear()} All rights reserved.
+      </p></div>
   );
 }
 
