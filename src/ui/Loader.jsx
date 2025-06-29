@@ -23,15 +23,16 @@ export default function Loader({ onFinish }) {
           transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           <motion.div
-            initial={{ scale: 0.8, y: 0 }}
-            animate={{ scale: 3.8, y: '-100%' }}
+            initial={{ scale: 0.2, y: 0 }}
+            animate={{ scale: 1.0, y: '-25%' }}
             transition={{ delay: 0.8, duration: 1, ease: "easeInOut" }}
-            className="flex items-center justify-center "
+            className="flex items-center justify-center w-full h-full"
+            style={{ width: '100vw', height: '100vh' }}
           >
             <img
               src="/logo_dd.svg"
               alt="deepdesigns logo"
-              className="h-24 w-auto invert z-10"
+              className="w-full h-full object-contain invert z-10"
               draggable={false}
             />
             
