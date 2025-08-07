@@ -11,7 +11,7 @@ export default function ResumeButton({ darkMode }) {
     <>
       <CustomPointer show={showCursor} />
       <a
-        href="https://drive.google.com/file/d/1quTgCXhUinzNE67xjLcPuGs30Y2CtVRX/view?usp=sharing"
+        href="https://drive.google.com/drive/folders/1NUWueMfi1ScabLb6LII_6JJTgOhP6DRU?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className={`use-pointer absolute top-6 right-6 z-30 px-7 py-2 rounded-full border-2 
