@@ -37,25 +37,26 @@
 
 import React, { useEffect, useRef } from "react";
 import Matter from "matter-js";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 const skills = [
-  { name: "HTML", logo: "/html.svg" },
-  { name: "CSS", logo: "/css.svg" },
-  { name: "Figma", logo: "/figma.svg" },
-  { name: "Webflow", logo: "/webflow.svg" },
-  { name: "Framer", logo: "/framer.svg" },
-  { name: "Spline3D", logo: "/spline.svg" },
-  { name: "Youtube", logo: "/youtube.svg" },
-  { name: "ChatGPT", logo: "/chatgpt.svg" },
-  { name: "Tailwind CSS", logo: "/tailwindcss.svg" },
-  { name: "React JS", logo: "/react.svg" },
-  { name: "Spotify", logo: "/spotify.svg" },
-  { name: "JavaScript", logo: "/javascript.svg" },
-  { name: "Vite.js", logo: "/vite.svg" },
-  { name: "Git", logo: "/git.svg" },
-  { name: "Github", logo: "/github.svg" },
-  { name: "Matter.js", logo: "/matter.png" },
-  { name: "Framer Motion", logo: "/motion.svg" },
+  { name: "HTML", logo: cloudinaryImages.html },
+  { name: "CSS", logo: cloudinaryImages.css },
+  { name: "Figma", logo: cloudinaryImages.figma },
+  { name: "Webflow", logo: cloudinaryImages.webflow },
+  { name: "Framer", logo: cloudinaryImages.framer },
+  { name: "Spline3D", logo: cloudinaryImages.spline },
+  { name: "Youtube", logo: cloudinaryImages.youtube },
+  { name: "ChatGPT", logo: cloudinaryImages.chatgpt },
+  { name: "Tailwind CSS", logo: cloudinaryImages.tailwind },
+  { name: "React JS", logo: cloudinaryImages.react },
+  { name: "Spotify", logo: cloudinaryImages.spotify },
+  { name: "JavaScript", logo: cloudinaryImages.javascript },
+  { name: "Vite.js", logo: cloudinaryImages.vite },
+  { name: "Git", logo: cloudinaryImages.git },
+  { name: "Github", logo: cloudinaryImages.github },
+  { name: "Matter.js", logo: cloudinaryImages.matter },
+  { name: "Framer Motion", logo: cloudinaryImages.motion },
 ];
 
 export default function SkillsCard({ darkMode }) {

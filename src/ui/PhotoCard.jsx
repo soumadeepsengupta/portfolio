@@ -1,7 +1,8 @@
 import React from "react";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 export default function PhotoCard({ darkMode }) {
-  const imageSrc = darkMode ? "/profile_night.jpeg" : "/profile_day.jpeg";
+  const imageSrc = darkMode ? cloudinaryImages.profileNight : cloudinaryImages.profileDay;
 
   return (
     <div className={`photo-card-cursor grayscale rounded-2xl border-3 flex items-center justify-center overflow-hidden h-full cursor-none ${darkMode ? 'border-white' : 'border-black'}`}>

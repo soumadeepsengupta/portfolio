@@ -56,7 +56,7 @@ export default function IntroCard({ darkMode }) {
     >
       {/* Masked layer */}
       <motion.div
-        className="absolute inset-0 z-10 flex items-start justify-start p-8 text-black dark:text-white font-geist [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:8px] dark:bg-black bg-black"
+        className="absolute inset-0 z-10 flex items-start justify-start p-8 text-black dark:text-white font-geist [mask-image:url(https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967786/portfolio/mask.svg)] [mask-repeat:no-repeat] [mask-size:8px] dark:bg-black bg-black"
         animate={{
           maskPosition: `${mousePos.x - maskSize / 3}px ${mousePos.y - maskSize / 3}px`,
           maskSize: `${maskSize/1.5}px`,

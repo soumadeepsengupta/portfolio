@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 const CURSOR_SIZE = 48;
 
@@ -110,7 +111,7 @@ export default function CustomCursor() {
         alignItems: 'flex-start',
         // No transform here, we'll use absolute for the bubble
       }}>
-        <img src="/figmacursor.svg" alt="Figma Cursor" width={32} height={32} style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.15))', display: 'block' }} />
+        <img src={cloudinaryImages.figmaCursor} alt="Figma Cursor" width={32} height={32} style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.15))', display: 'block' }} />
         <div style={{
           position: 'absolute',
           left: 28,
@@ -139,7 +140,7 @@ export default function CustomCursor() {
 
   return (
     <img
-      src={forcePointer || isPointer ? "/pointer.svg" : "/cursor.svg"}
+      src={forcePointer || isPointer ? cloudinaryImages.pointer : cloudinaryImages.cursor}
       alt="Custom Cursor"
       width={CURSOR_SIZE}
       height={CURSOR_SIZE}

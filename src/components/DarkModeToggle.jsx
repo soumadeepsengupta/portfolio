@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CustomPointer from "./CustomPointer";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 export default function DarkModeToggle({ darkMode, setDarkMode }) {
   const [hovered, setHovered] = useState(false);
@@ -54,9 +55,9 @@ export default function DarkModeToggle({ darkMode, setDarkMode }) {
             }}
           >
             {darkMode ? (
-              <img src="/moon.svg" alt="Moon" width={20} height={20} style={{ filter: "invert(1)" }} />
+              <img src={cloudinaryImages.moon} alt="Moon" width={20} height={20} style={{ filter: "invert(1)" }} />
             ) : (
-              <img src="/sun.svg" alt="Sun" width={20} height={20} />
+              <img src={cloudinaryImages.sun} alt="Sun" width={20} height={20} />
             )}
           </motion.span>
         </motion.div>

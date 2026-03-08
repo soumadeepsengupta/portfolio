@@ -31,7 +31,7 @@ export default function CustomPointer({ show }) {
   return (
     <img
       ref={cursorRef}
-      src="/pointer.svg"
+      src="https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967801/portfolio/pointer.svg"
       alt="Custom Cursor"
       width={64}
       height={64}

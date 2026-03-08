@@ -58,28 +58,29 @@
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import CustomPointer from "../components/CustomPointer";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
 export default function WorkCard({ darkMode }) {
   const works = [
-    { name: "Finployee", cover: "/finployee.png", link: "https://www.linkedin.com/posts/soumadeep-sengupta-0b6017235_uiux-hackathonwinner-crm-activity-7340596580690837505-rXCC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqOkMoBWqr7ajIG6pTlFRHUtkrqL8VNS2E" },
-    { name: "HackOdisha 5.0", cover: "/ho5.jpg", link: "https://www.hackodisha.com/" },
-    { name: "Healthcare", cover: "/health.png", link: "https://www.figma.com/design/Gw8jgtMJUGBhA3medZeKo4/preva?node-id=98-253&t=ToHEIqvTIG4nqmMK-1" },
-    { name: "Sakha", cover: "/sakha.png", link: "https://sakha-six.vercel.app/" },
-    { name: "Globio", cover: "/globio.png", link: "https://www.figma.com/design/cMkzP8NY1MN4Mr6sCeOQa1/globio?node-id=15-279&t=AlzizgYHmSB997Hb-1" },
-    { name: "Happily Ever Woofer", cover: "/dog.png", link: "https://woofwoof-delta.vercel.app/" },
-    { name: "SnapJini", cover: "/coverjini.png", link: "https://www.behance.net/gallery/225635403/SnapJini-AI-Powered-Social-Media-Tool-for-Hotels" },
-    { name: "TradeBin", cover: "/tradebin.png", link: "https://project-joga-bonito.vercel.app/" },
-    { name: "Packaging", cover: "/pkg.png", link: "https://app.spline.design/file/9de6d0df-4b30-46b9-b8e2-50b9a5214e7f" },
-    { name: "Chutti", cover: "/chutti.png", link: "https://www.behance.net/gallery/221660645/Chutti-Your-personal-attendance-tracking-app" },
-    { name: "Nitrutsav", cover: "/nu.png", link: "https://www.nitrutsav.com/" },
-    { name: "Vriddhi", cover: "/vriddhi.png", link: "https://www.vriddhi.co/" },
-    { name: "NES", cover: "/nes.png", link: "https://nes.ecellnitrkl.in/" },
-    { name: "Customart.in", cover: "/customart.png", link: "https://www.figma.com/design/3FShLO3JMrESqDVBCS7fJk/customart?node-id=0-1&t=Tf1AD2tdT80jxEXe-1" },
-    { name: "E-cell", cover: "/ecell.png", link: "https://www.ecellnitrkl.in/" },
-    { name: "My Room", cover: "/3d.png", link: "https://www.behance.net/gallery/216800417/Hostel-Room(3D-Model)" },
+    { name: "Finployee", cover: cloudinaryImages.finployee, link: "https://www.linkedin.com/posts/soumadeep-sengupta-0b6017235_uiux-hackathonwinner-crm-activity-7340596580690837505-rXCC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqOkMoBWqr7ajIG6pTlFRHUtkrqL8VNS2E" },
+    { name: "HackOdisha 5.0", cover: cloudinaryImages.ho5, link: "https://www.hackodisha.com/" },
+    { name: "Healthcare", cover: cloudinaryImages.health, link: "https://www.figma.com/design/Gw8jgtMJUGBhA3medZeKo4/preva?node-id=98-253&t=ToHEIqvTIG4nqmMK-1" },
+    { name: "Sakha", cover: cloudinaryImages.sakha, link: "https://sakha-six.vercel.app/" },
+    { name: "Globio", cover: cloudinaryImages.globio, link: "https://www.figma.com/design/cMkzP8NY1MN4Mr6sCeOQa1/globio?node-id=15-279&t=AlzizgYHmSB997Hb-1" },
+    { name: "Happily Ever Woofer", cover: cloudinaryImages.dog, link: "https://woofwoof-delta.vercel.app/" },
+    { name: "SnapJini", cover: cloudinaryImages.coverJini, link: "https://www.behance.net/gallery/225635403/SnapJini-AI-Powered-Social-Media-Tool-for-Hotels" },
+    { name: "TradeBin", cover: cloudinaryImages.tradeBin, link: "https://project-joga-bonito.vercel.app/" },
+    { name: "Packaging", cover: cloudinaryImages.pkg, link: "https://app.spline.design/file/9de6d0df-4b30-46b9-b8e2-50b9a5214e7f" },
+    { name: "Chutti", cover: cloudinaryImages.chutti, link: "https://www.behance.net/gallery/221660645/Chutti-Your-personal-attendance-tracking-app" },
+    { name: "Nitrutsav", cover: cloudinaryImages.nu, link: "https://www.nitrutsav.com/" },
+    { name: "Vriddhi", cover: cloudinaryImages.vriddhi, link: "https://www.vriddhi.co/" },
+    { name: "NES", cover: cloudinaryImages.nes, link: "https://nes.ecellnitrkl.in/" },
+    { name: "Customart.in", cover: cloudinaryImages.customart, link: "https://www.figma.com/design/3FShLO3JMrESqDVBCS7fJk/customart?node-id=0-1&t=Tf1AD2tdT80jxEXe-1" },
+    { name: "E-cell", cover: cloudinaryImages.ecell, link: "https://www.ecellnitrkl.in/" },
+    { name: "My Room", cover: cloudinaryImages.threeDRoom, link: "https://www.behance.net/gallery/216800417/Hostel-Room(3D-Model)" },
   ];
 
   const [hovered, setHovered] = useState(null);

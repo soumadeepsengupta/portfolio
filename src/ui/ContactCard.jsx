@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 const messages = [
   "Up for UI talks... extra masala please.",
@@ -103,7 +104,7 @@ export default function ContactCard({ darkMode }) {
       {showBubble && (
         <div className="absolute right-[40px] bottom-[120px] z-10 min-w-[170px] max-w-[60vw] bg-blue-300/90 rounded-full rounded-br-none px-2 py-2 shadow font-geist text-base flex flex-col items-start animate-fade-in" style={{transform: 'scale(0.75)', transformOrigin: 'top right'}}>
           <div className="flex flex-row items-center gap-3 mb-1 w-full">
-            <img src="/profilepic.svg" alt="Soumadeep" className="w-10 h-10 rounded-full border border-black/20" />
+            <img src={cloudinaryImages.profilePic} alt="Soumadeep" className="w-10 h-10 rounded-full border border-black/20" />
             <div className="flex flex-col justify-center">
               <span className="font-semibold text-black/80 leading-tight text-base">Soumadeep</span>
               <span className="text-black/80 leading-tight min-h-[1em] text-base">

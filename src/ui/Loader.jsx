@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { cloudinaryImages } from "../config/cloudinaryImages";
 
 export default function Loader({ onFinish }) {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -30,7 +31,7 @@ export default function Loader({ onFinish }) {
             style={{ width: '100vw', height: '100vh' }}
           >
             <img
-              src="/logo_dd.svg"
+              src={cloudinaryImages.logo}
               alt="deepdesigns logo"
               className="w-full h-full object-contain invert z-10"
               draggable={false}

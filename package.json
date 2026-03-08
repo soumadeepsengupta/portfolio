@@ -8,10 +8,14 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "chmod +x node_modules/.bin/vite || true"
+    "postinstall": "chmod +x node_modules/.bin/vite || true",
+    "test:cloudinary": "node testCloudinary.js",
+    "upload:cloudinary": "node uploadToCloudinary.js"
   },
   "dependencies": {
+    "cloudinary": "^2.9.0",
     "clsx": "^2.1.1",
+    "dotenv": "^17.3.1",
     "framer-motion": "^12.18.1",
     "matter-js": "^0.20.0",
     "motion": "^12.19.1",
