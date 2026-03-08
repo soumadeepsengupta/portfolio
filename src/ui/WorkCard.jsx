@@ -65,6 +65,8 @@ const STAGGER = 0.025;
 
 export default function WorkCard({ darkMode }) {
   const works = [
+    { name: "Next Step", cover: cloudinaryImages.nextStep, link: "https://next-step-startup.vercel.app/" },
+    { name: "BookMyDine", cover: cloudinaryImages.bookMyDine, link: "https://www.figma.com/design/iJNv8EtGORCVlJCgx19Kfw/bookmydine?node-id=0-1&t=Gc4dqCgPAd19mXAC-1" },
     { name: "Finployee", cover: cloudinaryImages.finployee, link: "https://www.linkedin.com/posts/soumadeep-sengupta-0b6017235_uiux-hackathonwinner-crm-activity-7340596580690837505-rXCC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqOkMoBWqr7ajIG6pTlFRHUtkrqL8VNS2E" },
     { name: "HackOdisha 5.0", cover: cloudinaryImages.ho5, link: "https://www.hackodisha.com/" },
     { name: "Healthcare", cover: cloudinaryImages.health, link: "https://www.figma.com/design/Gw8jgtMJUGBhA3medZeKo4/preva?node-id=98-253&t=ToHEIqvTIG4nqmMK-1" },

@@ -8,9 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "chmod +x node_modules/.bin/vite || true",
-    "test:cloudinary": "node testCloudinary.js",
-    "upload:cloudinary": "node uploadToCloudinary.js"
+    "postinstall": "chmod +x node_modules/.bin/vite || true"
   },
   "dependencies": {
     "cloudinary": "^2.9.0",
