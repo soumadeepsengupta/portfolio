@@ -32,7 +32,7 @@ export const getOptimizedImage = (url, options = {}) => {
 // Centralized image paths - All uploaded to Cloudinary
 export const cloudinaryImages = {
   // Profile images
-  profileDay: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967808/portfolio/profile_day.jpg',
+  profileDay: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1773008902/portfolio/profile_day.jpg',
   profileNight: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967810/portfolio/profile_night.jpg',
   profilePic: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967805/portfolio/profilepic.svg',
   

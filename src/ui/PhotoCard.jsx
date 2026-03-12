@@ -5,7 +5,7 @@ export default function PhotoCard({ darkMode }) {
   const imageSrc = darkMode ? cloudinaryImages.profileNight : cloudinaryImages.profileDay;
 
   return (
-    <div className={`photo-card-cursor grayscale rounded-2xl border-3 flex items-center justify-center overflow-hidden h-full cursor-none ${darkMode ? 'border-white' : 'border-black'}`}>
+    <div className={`photo-card-cursor grayscale hover:grayscale-0 transition-all duration-300 rounded-2xl border-3 flex items-center justify-center overflow-hidden h-full cursor-none ${darkMode ? 'border-white' : 'border-black'}`}>
       <img
         src={imageSrc}
         alt="Profile"
