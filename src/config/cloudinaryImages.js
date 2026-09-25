@@ -52,6 +52,8 @@ export const cloudinaryImages = {
   sun: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967819/portfolio/sun.svg',
   
   // Work projects
+  therapybro: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1790367137/therapybro.png',
+  ogtv: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1790360980/ogtv.png',
   nextStep: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1773007898/portfolio/next-step.png',
   bookMyDine: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1773007897/portfolio/bookmydine.png',
   finployee: 'https://res.cloudinary.com/dtomfl3yj/image/upload/v1772967768/portfolio/finployee.png',
